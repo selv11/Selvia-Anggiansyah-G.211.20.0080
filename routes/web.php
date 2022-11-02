@@ -17,10 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/nama', function(){
-    echo "Hello World";
-})->middleware('middleware1');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/home', function(){
-    echo '</h1>ini home</h1>';
-});
+require __DIR__.'/auth.php';
